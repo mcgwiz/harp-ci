@@ -1,7 +1,5 @@
 #!/bin/bash
 
-rm -rf out
-mkdir out
 ./harp compile src dist
 git checkout gh-pages
 mkdir tmp
