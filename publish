@@ -1,6 +1,10 @@
 #!/bin/bash
 
 ./harp compile src dist
+
+echo 'ls is'
+ls .
+
 git checkout gh-pages
 mkdir tmp
 mv * tmp
