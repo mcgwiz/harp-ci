@@ -1,0 +1,13 @@
+#!/bin/bash
+
+rm -rf out
+mkdir out
+./harp compile src dist
+git checkout gh-pages
+mkdir tmp
+mv * tmp
+mv tmp/dist/* .
+rm -rf tmp
+git add -A
+git commit -am "deploy `git log | head -n 1`"
+git push
