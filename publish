@@ -8,4 +8,8 @@ mv tmp/dist/* .
 rm -rf tmp
 git add -A
 git commit -am "deploy `git log | head -n 1`"
+git config user.name ${GIT_USER}
+git config user.email ${GIT_EMAIL}
+git config credential.helper "store --file=.git/credentials"
+echo "https://${GH_TOKEN}:@github.com" .git/credentials
 git push

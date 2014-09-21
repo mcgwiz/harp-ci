@@ -1,7 +1,10 @@
 language: node_js
-
 braches:
   only:
   - master
-
-script: source ./publish
+script: source publish
+tmp: 
+before_install:
+- openssl aes-256-cbc -K $encrypted_0592a0e33f3c_key -iv $encrypted_0592a0e33f3c_iv
+  -in publish-env.enc -out publish-env -d
+- source publish-env
