@@ -1,0 +1,9 @@
+Page 2<br>
+
+example of injecting html content into another partial: 
+<%- partial('_partial.ejs', { yield: 'something'}) %>
+<hr>
+example of injecting a partial into another partial: 
+<%- partial('_partial.ejs', { yield: partial('_stuff.ejs')}) %>
+<hr>
+takeaway: use 'yield' identifier for maximum idiomaticity!
