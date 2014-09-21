@@ -1,0 +1,7 @@
+language: ruby
+
+braches:
+  only:
+  - master
+
+script: deploy
