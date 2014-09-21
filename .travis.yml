@@ -4,4 +4,4 @@ braches:
   only:
   - master
 
-script: ./deploy
+script: source ./deploy
