@@ -8,7 +8,9 @@ echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 
 ./harp compile src dist
 
+git branch
 git fetch
+git branch
 git checkout gh-pages
 mkdir tmp
 mv * tmp
