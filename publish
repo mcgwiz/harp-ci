@@ -3,11 +3,14 @@ set -x
 
 ./harp compile src dist
 
-git config user.name ${GIT_USER}
+git config user.name ${GIT_NAME}
 git config user.email ${GIT_EMAIL}
 git config credential.helper "store --file=.git/credentials"
 echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+#git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+
+git remote set-url --push origin `git config remote.origin.url | sed 's/git:/https:/'`
+git remote set-branches --add origin gh-pages
 git fetch origin gh-pages
 git checkout -b gh-pages origin/gh-pages
 
