@@ -19,6 +19,7 @@ mv * tmp
 mv tmp/dist/* .
 rm -rf tmp
 
+git status
 git add -A
 git status
 git commit -am "deploy `git log | head -n 1`"
