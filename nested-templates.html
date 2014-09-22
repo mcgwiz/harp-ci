@@ -15,8 +15,24 @@
 	</ul>
 </nav>
 
-    <h2>Hello</h2>
+    <h2>Nested Templates</h2>
 
-Here I explore Harp, EJS templates, and their support for modular component-oriented development, as well as leveraging Travis CI to continuously publish to GitHub Pages.
+<strong>Example of injecting HTML content into another partial: </strong>
+<blockquote>
+	<div class="partial">
+  [I'm HTML content!']
+</div>
+</blockquote>
+<hr>
+
+<strong>Example of injecting a partial into another partial: </strong>
+<blockquote>
+<div class="partial">
+  [I'm a template!]
+</div>
+</blockquote>
+<hr>
+
+takeaway: use 'yield' identifier for maximum idiomaticity!
 </body>
 </html>
