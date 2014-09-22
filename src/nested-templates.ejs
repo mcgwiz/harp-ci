@@ -1,0 +1,15 @@
+<h2>Nested Templates</h2>
+
+<strong>Example of injecting HTML content into another partial: </strong>
+<blockquote>
+	<%- partial('_partial.ejs', { yield: '[I\'m HTML content!\']'}) %>
+</blockquote>
+<hr>
+
+<strong>Example of injecting a partial into another partial: </strong>
+<blockquote>
+<%- partial('_partial.ejs', { yield: partial('_stuff.ejs')}) %>
+</blockquote>
+<hr>
+
+takeaway: use 'yield' identifier for maximum idiomaticity!

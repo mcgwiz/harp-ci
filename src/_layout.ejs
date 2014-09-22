@@ -5,15 +5,15 @@
 	base = new Array(current.path.length).join("../");
 %>
 <!DOCTYPE html>
-<html>
+<html class="layout">
 <head>
 	<!-- TODO test harp's layout behavior for subdirectory html resources... will this rel uri work? -->
 	<link rel="stylesheet" href="<%=base%>styles.css" type="text/css">
 </head>
 <body>
-	<h1>Harp test</h1>
+	<h1><a href="<%=base%>./">Harp test</a></h1>
 	<%- partial('_nav') %>
-	<hr>
+
     <%- yield %>
 </body>
 </html>
