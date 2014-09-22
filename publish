@@ -3,8 +3,8 @@ set -x
 
 ./harp compile src dist
 
-git config user.name ${GIT_NAME}
-git config user.email ${GIT_EMAIL}
+git config user.name "${GIT_NAME}"
+git config user.email "${GIT_EMAIL}"
 git config credential.helper "store --file=.git/credentials"
 echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 #git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
