@@ -15,17 +15,11 @@ git fetch origin gh-pages
 git checkout -b gh-pages origin/gh-pages
 
 mkdir tmp
-ls -l
-
 mv * tmp
-ls -l
-
 mv tmp/dist/* .
-ls -l
-
 rm -rf tmp
-ls -l
 
 git add -A
+git status
 git commit -am "deploy `git log | head -n 1`"
 git push
