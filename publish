@@ -3,6 +3,7 @@
 # based on http://awestruct.org/auto-deploy-to-github-pages/
 
 ./harp compile src dist
+ref=`git log | head -n 1`
 
 git config user.name "${GIT_NAME}"
 git config user.email "${GIT_EMAIL}"
@@ -20,5 +21,5 @@ mv tmp/dist/* .
 rm -rf tmp
 
 git add -A
-git commit -am "deploy `git log | head -n 1`"
+git commit -am "deploy ${ref}"
 git push
