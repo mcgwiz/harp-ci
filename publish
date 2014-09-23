@@ -1,19 +1,22 @@
 #!/bin/bash
+set -x
 
 # based on http://awestruct.org/auto-deploy-to-github-pages/
 
 ./harp compile src dist
 ref=`git log | head -n 1`
 
-git config user.name "${GIT_NAME}"
-git config user.email "${GIT_EMAIL}"
-git config credential.helper "store --file=.git/credentials"
-echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+[[ "${GIT_NAME}" != "" ]] && git config user.name "${GIT_NAME}"
+[[ "${GIT_EMAIL}" != "" ]] && git config user.email "${GIT_EMAIL}"
+if [ "${GH_TOKEN}" != "" ]; then
+    git config credential.helper "store --file=.git/credentials"
+    echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+fi
 
 git remote set-url --push origin `git config remote.origin.url | sed 's/git:/https:/'`
 git remote set-branches --add origin gh-pages
 git fetch origin gh-pages
-git checkout -b gh-pages origin/gh-pages
+git checkout gh-pages
 
 mkdir tmp
 mv * tmp
@@ -23,3 +26,5 @@ rm -rf tmp
 git add -A
 git commit -am "deploy ${ref}"
 git push
+
+git checkout master
