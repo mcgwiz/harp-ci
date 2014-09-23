@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 # based on http://awestruct.org/auto-deploy-to-github-pages/
 
