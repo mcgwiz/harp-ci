@@ -7,6 +7,4 @@ tmp:
 before_install:
 - openssl aes-256-cbc -K $encrypted_e14d7aa062e3_key -iv $encrypted_e14d7aa062e3_iv
   -in publish-env.enc -out publish-env -d
-- openssl aes-256-cbc -K $encrypted_b883d78a9832_key -iv $encrypted_b883d78a9832_iv
-  -in publish-env.enc -out publish-env -d
 - source publish-env
