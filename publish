@@ -23,7 +23,7 @@ mv tmp/dist/* .
 rm -rf tmp
 
 git add -A
-git commit -am "deploy ${ref}"
+git commit -am "publish ${ref}"
 git push
 
 git checkout master
