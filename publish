@@ -7,6 +7,7 @@ v=`git describe --match v* | sed 's/^.*-\(.*\)-.*$/\1/'`
 echo "{ \"version\": $v }" > src/build/_data.json
 
 ./harp compile src dist
+git checkout -- src/build/_data.json
 ref=`git log | head -n 1`
 
 [[ "${GIT_NAME}" != "" ]] && git config user.name "${GIT_NAME}"
