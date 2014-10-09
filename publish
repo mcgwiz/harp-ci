@@ -2,6 +2,10 @@
 
 # based on http://awestruct.org/auto-deploy-to-github-pages/
 
+v=`git describe --match v* | sed 's/^.*-\(.*\)-.*$/\1/'`
+
+echo "{ \"version\": $v }" > src/build/_data.json
+
 ./harp compile src dist
 ref=`git log | head -n 1`
 

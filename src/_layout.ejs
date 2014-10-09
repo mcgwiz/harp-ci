@@ -5,7 +5,7 @@
 	base = new Array(current.path.length).join("../");
 %>
 <!DOCTYPE html>
-<html class="layout">
+<html class="layout <%- (environment == 'production') && "_prod" || "" %>">
 <head>
 	<link rel="stylesheet" href="<%=base%>styles.css" type="text/css">
 </head>
@@ -13,6 +13,14 @@
 	<h1><a href="<%=base%>./">Harp test</a></h1>
 	<%- partial('_nav') %>
 
-    <%- yield %>
+	<div class="-page">
+	    <%- yield %>
+	</div>
+    <% if (environment == 'production') { %>
+        <!-- Revision <%- public.build._data.version %> -->
+    <% }
+    else { %>
+		<cite>Revision <%- public.build._data.version %>
+    <% } %>
 </body>
 </html>
