@@ -17,10 +17,10 @@
 	    <%- yield %>
 	</div>
     <% if (environment == 'production') { %>
-        <!-- Revision <%- public.build._data.version %> -->
+        <!-- Revision <%- public.build._data.revision %> -->
     <% }
     else { %>
-		<cite>Revision <%- public.build._data.version %>
+		<cite>Revision <%- public.build._data.revision %>
     <% } %>
 </body>
 </html>

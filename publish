@@ -3,8 +3,8 @@
 # based on http://awestruct.org/auto-deploy-to-github-pages/
 
 v=`git log --oneline | wc -l`
-
-echo "{ \"version\": $v }" > src/build/_data.json
+echo "Revision $v"
+echo "{ \"revision\": $v }" > src/build/_data.json
 
 ./harp compile src dist
 git checkout -- src/build/_data.json
