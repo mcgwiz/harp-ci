@@ -2,7 +2,7 @@
 
 # based on http://awestruct.org/auto-deploy-to-github-pages/
 
-v=`git describe --match v* | sed 's/^.*-\(.*\)-.*$/\1/'`
+v=`git log --oneline | wc -l`
 
 echo "{ \"version\": $v }" > src/build/_data.json
 
