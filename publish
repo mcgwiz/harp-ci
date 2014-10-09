@@ -2,8 +2,7 @@
 
 # based on http://awestruct.org/auto-deploy-to-github-pages/
 
-git log --oneline
-v=`git log --oneline | wc -l`
+v=`git rev-list HEAD --count`
 echo "Revision $v"
 echo "{ \"revision\": $v }" > src/build/_data.json
 
